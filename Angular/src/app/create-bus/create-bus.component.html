@@ -1,0 +1,93 @@
+<div class="ui raised segment">
+    <h2 class="ui header">Create New Bus Route</h2>
+    <form 
+        [formGroup]="createBusForm"
+        (ngSubmit)="onSubmit(createBusForm.value)"
+        class="ui form">
+
+      <div class="field">
+        <label for="COMPANY_CODE">COMPANY CODE</label>
+        <input type="text" 
+          id="COMPANY_CODE" 
+          placeholder=""
+          formControlName="COMPANY_CODE">
+      </div>
+
+      <div class="field">
+        <label for="ROUTE_NAMEE">ROUTE NAME</label>
+        <input type="text" 
+          id="ROUTE_NAMEE" 
+          placeholder=""
+          formControlName="ROUTE_NAMEE">
+      </div>
+
+      <div class="field">
+        <label for="ROUTE_TYPE">ROUTE TYPE</label>
+        <input type="text" 
+          id="ROUTE_TYPE" 
+          placeholder=""
+          formControlName="ROUTE_TYPE">
+      </div>
+
+      <div class="field">
+        <label for="SERVICE_MODE">SERVICE MODE</label>
+        <input type="text" 
+          id="SERVICE_MODE" 
+          placeholder=""
+          formControlName="SERVICE_MODE">
+      </div>
+
+      <div class="field">
+        <label for="JOURNEY_TIME">JOURNEY TIME</label>
+        <input type="text" 
+          id="JOURNEY_TIME" 
+          placeholder=""
+          formControlName="JOURNEY_TIME">
+      </div>
+
+      <div class="field">
+        <label for="LOC_START_NAMEE">LOC START NAME</label>
+        <input type="text" 
+          id="LOC_START_NAMEE" 
+          placeholder=""
+          formControlName="LOC_START_NAMEE">
+      </div>
+
+      <div class="field">
+        <label for="LOC_END_NAMEE">LOC END NAME</label>
+        <input type="text" 
+          id="LOC_END_NAMEE" 
+          placeholder=""
+          formControlName="LOC_END_NAMEE">
+      </div>
+
+      <div class="field">
+        <label for="HYPERLINK_E">HYPERLINK</label>
+        <input type="text" 
+          id="HYPERLINK_E" 
+          placeholder=""
+          formControlName="HYPERLINK_E">
+      </div>
+
+      <div class="field">
+        <label for="FULL_FARE">FULL FARE</label>
+        <input type="text" 
+          id="FULL_FARE" 
+          placeholder=""
+          formControlName="FULL_FARE">
+      </div>
+      <div class="field">
+        <label for="LAST_UPDATE_DATE">LAST UPDATE DATE</label>
+        <input type="text" 
+          id="LAST_UPDATE_DATE" 
+          placeholder=""
+          formControlName="LAST_UPDATE_DATE">
+      </div>
+
+      <button type="submit" class="ui inverted green button">Submit</button>
+    </form>
+
+    <div>
+      {{ serverData | json }}
+    </div>
+  </div>

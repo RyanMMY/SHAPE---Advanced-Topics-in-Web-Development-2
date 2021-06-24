@@ -1,0 +1,51 @@
+<div class="ui two column divided grid">
+    <div class="row">
+      <div class="column">
+        <p>
+          <app-search-bus searchType="By Route" (deleteEvent)="deleteEventReceiver($event)"></app-search-bus>
+        </p>
+      </div>
+
+      <div class="column">
+        <p>
+          <app-search-bus searchType="By Fare" (deleteEvent)="deleteEventReceiver($event)"></app-search-bus>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <p>
+          <app-search-bus searchType="By Start Point" (deleteEvent)="deleteEventReceiver($event)"></app-search-bus>
+        </p>
+      </div>
+
+      <div class="column">
+        <p>
+          <app-search-bus searchType="By End Point" (deleteEvent)="deleteEventReceiver($event)"></app-search-bus>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+          <p>
+            <app-create-bus></app-create-bus>
+          </p>
+        </div>
+        
+        <div class="column">
+          <p>
+            <app-delete-bus *ngIf="deleteEventTriggered" [busRecord]="this.busRecord" (cancelDeleteEvent)="cancelDeleteEventReceiver()"></app-delete-bus>
+          </p>
+        </div>
+    </div>
+    
+    <div class="row">
+      <div class="column">
+        <p>
+          <app-update-bus></app-update-bus>
+        </p>
+      </div>
+  
+  </div>

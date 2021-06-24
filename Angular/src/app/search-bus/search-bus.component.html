@@ -1,0 +1,48 @@
+<div class="ui raised segment">
+    <h2 class="ui header">Search for Bus</h2>
+    <form 
+        [formGroup]="searchBusForm"
+        (ngSubmit)="onSubmit(searchBusForm.value)"
+        class="ui form">
+      <div class="field">
+        <label for="searchKey">{{ searchType }}</label>
+        <input type="text" 
+          id="searchKey" 
+          placeholder=""
+          formControlName="searchKey">
+      </div>
+
+      <button type="submit" class="ui inverted green button">Submit</button>
+    </form>
+
+    <div>
+      <p></p>
+      <div>
+        <table border=1>
+          <tr>
+            <th><b>  Route ID   </b></th>
+            <th><b>  Route Name   </b></th>
+            <th><b>  Route Type   </b></th>
+            <th><b>  Journey Time   </b></th>
+            <th><b>  Start Name   </b></th>
+            <th><b>  End Name   </b></th>
+            <th><b>  Full Fare   </b></th>
+          </tr>
+
+          <tr *ngFor="let bus of serverDataArr">
+            <td> {{bus.ROUTE_ID}}</td>
+            <td> {{bus.ROUTE_NAMEE}}</td>
+            <td> {{bus.ROUTE_TYPE}}</td>
+            <td> {{bus.JOURNEY_TIME}} mins</td>
+            <td> {{bus.LOC_START_NAMEE}}</td>
+            <td> {{bus.LOC_END_NAMEE}}</td>           
+            <td> $ {{bus.FULL_FARE}}</td>
+            <td><button (click)="deleteButtonHandler(bus.routeNumber)" style="font-size:8px;">Delete</button></td>
+          </tr>
+
+        </table>
+      </div>
+
+    </div>
+  </div>
+  
